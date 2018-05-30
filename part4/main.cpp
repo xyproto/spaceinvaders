@@ -11,11 +11,12 @@
 #include "sprite.h"
 #include "spriteanimation.h"
 
-bool game_running = false;
-int move_dir = 0;
-bool fire_pressed = 0;
+static bool game_running = false;
+static int move_dir = 0;
+static bool fire_pressed = 0;
 
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+void key_callback(__attribute__((unused)) GLFWwindow* window, int key,
+    __attribute__((unused)) int scancode, int action, __attribute__((unused)) int mods)
 {
     switch (key) {
     case GLFW_KEY_ESCAPE:
@@ -107,8 +108,8 @@ int main()
     GLuint buffer_texture;
     glGenTextures(1, &buffer_texture);
     glBindTexture(GL_TEXTURE_2D, buffer_texture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, buffer.width, buffer.height, 0, GL_RGBA,
-        GL_UNSIGNED_INT_8_8_8_8, buffer.data);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, static_cast<GLsizei>(buffer.width),
+        static_cast<GLsizei>(buffer.height), 0, GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, buffer.data);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
@@ -336,7 +337,7 @@ int main()
     for (size_t yi = 0; yi < 5; ++yi) {
         for (size_t xi = 0; xi < 11; ++xi) {
             Alien& alien = game.aliens[yi * 11 + xi];
-            alien.type = (5 - yi) / 2 + 1;
+            alien.type = static_cast<uint8_t>((5l - yi) / 2l + 1l);
 
             const Sprite& sprite = alien_sprites[2 * (alien.type - 1)];
 
@@ -393,8 +394,8 @@ int main()
             }
         }
 
-        glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, buffer.width, buffer.height, GL_RGBA,
-            GL_UNSIGNED_INT_8_8_8_8, buffer.data);
+        glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, static_cast<GLsizei>(buffer.width),
+            static_cast<GLsizei>(buffer.height), GL_RGBA, GL_UNSIGNED_INT_8_8_8_8, buffer.data);
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
         glfwSwapBuffers(window);
@@ -409,7 +410,8 @@ int main()
 
         // Simulate bullets
         for (size_t bi = 0; bi < game.num_bullets;) {
-            game.bullets[bi].y += game.bullets[bi].dir;
+            game.bullets[bi].y = static_cast<unsigned long>(
+                static_cast<long>(game.bullets[bi].y) + game.bullets[bi].dir);
             if (game.bullets[bi].y >= game.height || game.bullets[bi].y < bullet_sprite.height) {
                 game.bullets[bi] = game.bullets[game.num_bullets - 1];
                 --game.num_bullets;
@@ -444,12 +446,16 @@ int main()
         player_move_dir = 2 * move_dir;
 
         if (player_move_dir != 0) {
-            if (game.player.x + player_sprite.width + player_move_dir >= game.width) {
+            if (static_cast<long>(game.player.x) + static_cast<long>(player_sprite.width)
+                    + static_cast<long>(player_move_dir)
+                >= static_cast<long>(game.width)) {
                 game.player.x = game.width - player_sprite.width;
-            } else if ((int)game.player.x + player_move_dir <= 0) {
+            } else if (static_cast<long>(game.player.x) + static_cast<long>(player_move_dir)
+                <= 0l) {
                 game.player.x = 0;
             } else
-                game.player.x += player_move_dir;
+                game.player.x = static_cast<unsigned long>(
+                    static_cast<long>(game.player.x) + static_cast<long>(player_move_dir));
         }
 
         // Process events
