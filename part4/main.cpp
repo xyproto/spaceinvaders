@@ -40,6 +40,7 @@ void key_callback(__attribute__((unused)) GLFWwindow* window, int key,
         break;
     case GLFW_KEY_UP:
     case GLFW_KEY_W:
+    case GLFW_KEY_SPACE:
         if (action == GLFW_RELEASE)
             fire_pressed = true;
         break;
