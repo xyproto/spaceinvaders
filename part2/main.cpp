@@ -155,7 +155,7 @@ int main()
     Sprite alien_sprite;
     alien_sprite.width = 11;
     alien_sprite.height = 8;
-    alien_sprite.data = new uint8_t[88]{
+    alien_sprite.data = new uint8_t[88] {
         0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, // ..@.....@..
         0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, // ...@...@...
         0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, // ..@@@@@@@..

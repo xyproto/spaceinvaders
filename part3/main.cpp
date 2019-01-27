@@ -157,7 +157,7 @@ int main()
     Sprite alien_sprite0;
     alien_sprite0.width = 11;
     alien_sprite0.height = 8;
-    alien_sprite0.data = new uint8_t[88]{
+    alien_sprite0.data = new uint8_t[88] {
         0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, // ..@.....@..
         0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, // ...@...@...
         0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, // ..@@@@@@@..
@@ -171,7 +171,7 @@ int main()
     Sprite alien_sprite1;
     alien_sprite1.width = 11;
     alien_sprite1.height = 8;
-    alien_sprite1.data = new uint8_t[88]{
+    alien_sprite1.data = new uint8_t[88] {
         0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, // ..@.....@..
         1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, // @..@...@..@
         1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, // @.@@@@@@@.@
@@ -185,7 +185,7 @@ int main()
     Sprite player_sprite;
     player_sprite.width = 11;
     player_sprite.height = 7;
-    player_sprite.data = new uint8_t[77]{
+    player_sprite.data = new uint8_t[77] {
         0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, // .....@.....
         0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, // ....@@@....
         0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, // ....@@@....

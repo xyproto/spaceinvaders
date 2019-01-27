@@ -199,7 +199,7 @@ int main()
 
     alien_sprites[0].width = 8;
     alien_sprites[0].height = 8;
-    alien_sprites[0].data = new uint8_t[64]{
+    alien_sprites[0].data = new uint8_t[64] {
         0, 0, 0, 1, 1, 0, 0, 0, // ...@@...
         0, 0, 1, 1, 1, 1, 0, 0, // ..@@@@..
         0, 1, 1, 1, 1, 1, 1, 0, // .@@@@@@.
@@ -212,7 +212,7 @@ int main()
 
     alien_sprites[1].width = 8;
     alien_sprites[1].height = 8;
-    alien_sprites[1].data = new uint8_t[64]{
+    alien_sprites[1].data = new uint8_t[64] {
         0, 0, 0, 1, 1, 0, 0, 0, // ...@@...
         0, 0, 1, 1, 1, 1, 0, 0, // ..@@@@..
         0, 1, 1, 1, 1, 1, 1, 0, // .@@@@@@.
@@ -225,7 +225,7 @@ int main()
 
     alien_sprites[2].width = 11;
     alien_sprites[2].height = 8;
-    alien_sprites[2].data = new uint8_t[88]{
+    alien_sprites[2].data = new uint8_t[88] {
         0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, // ..@.....@..
         0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, // ...@...@...
         0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, // ..@@@@@@@..
@@ -238,7 +238,7 @@ int main()
 
     alien_sprites[3].width = 11;
     alien_sprites[3].height = 8;
-    alien_sprites[3].data = new uint8_t[88]{
+    alien_sprites[3].data = new uint8_t[88] {
         0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, // ..@.....@..
         1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, // @..@...@..@
         1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, // @.@@@@@@@.@
@@ -251,7 +251,7 @@ int main()
 
     alien_sprites[4].width = 12;
     alien_sprites[4].height = 8;
-    alien_sprites[4].data = new uint8_t[96]{
+    alien_sprites[4].data = new uint8_t[96] {
         0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, // ....@@@@....
         0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, // .@@@@@@@@@@.
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, // @@@@@@@@@@@@
@@ -264,7 +264,7 @@ int main()
 
     alien_sprites[5].width = 12;
     alien_sprites[5].height = 8;
-    alien_sprites[5].data = new uint8_t[96]{
+    alien_sprites[5].data = new uint8_t[96] {
         0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, // ....@@@@....
         0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, // .@@@@@@@@@@.
         1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, // @@@@@@@@@@@@
@@ -278,7 +278,7 @@ int main()
     Sprite alien_death_sprite;
     alien_death_sprite.width = 13;
     alien_death_sprite.height = 7;
-    alien_death_sprite.data = new uint8_t[91]{
+    alien_death_sprite.data = new uint8_t[91] {
         0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, // .@..@...@..@.
         0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, // ..@..@.@..@..
         0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, // ...@.....@...
@@ -291,7 +291,7 @@ int main()
     Sprite player_sprite;
     player_sprite.width = 11;
     player_sprite.height = 7;
-    player_sprite.data = new uint8_t[77]{
+    player_sprite.data = new uint8_t[77] {
         0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, // .....@.....
         0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, // ....@@@....
         0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, // ....@@@....
@@ -304,7 +304,7 @@ int main()
     Sprite bullet_sprite;
     bullet_sprite.width = 1;
     bullet_sprite.height = 3;
-    bullet_sprite.data = new uint8_t[3]{
+    bullet_sprite.data = new uint8_t[3] {
         1, // @
         1, // @
         1 // @
